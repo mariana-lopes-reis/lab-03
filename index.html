@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </link>
+    <style>
+        .card {
+            width: 25%
+        }
+
+        .header {
+            background-color: #ffb3b3;
+        }
+
+        .bebe {
+            background-color: #ffe6e6;
+        }
+
+        .criança {
+            background-color: #ffe6e6;
+        }
+
+        .adolescente {
+            background-color: #ffe6e6;
+        }
+
+        .jovemadulto {
+            background-color: #ffe6e6;
+        }
+
+        .adulto {
+            background-color: #ffe6e6;
+        }
+
+        .adultomeiaidade {
+            background-color: #ffe6e6;
+        }
+
+        .idoso {
+            background-color: #ffe6e6;
+        }
+
+        .lendario {
+            background-color: #ffe6e6;
+        }
+
+        .imortal {
+            background-color: #ffe6e6;
+        }
+
+        /* table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        } */
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script>
+        // https://learn.jquery.com/events/event-basics/
+
+        $(document).ready(function () {
+            const form = $("#form");
+            const numberInput = $("#numberInput");
+            const Bebé = $("#Bebé");
+            const Criança = $("#Criança");
+            const Adolescente = $("#Adolescente");
+            const JovemAdulto = $("#JovemAdulto");
+            const Adulto = $("#Adulto");
+            const AdultoMeiaIdade = $("#AdultoMeiaIdade");
+            const Idoso = $("#Idoso");
+            const Lendário = $("#Lendário");
+            const Imortal = $("#Imortal");
+
+            form.on("submit", function (event) {
+                // previne o refresh da página
+                event.preventDefault();
+
+                // obtem o valor do #numberInput
+                const value = numberInput.val();
+
+                if (value > 0 && value <= 2) {
+                    Bebé.removeClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value > 2 && value < 12) {
+                    Bebé.addClass("d-none");
+                    Criança.removeClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 12 && value <= 16) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.removeClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value > 16 && value < 18) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.removeClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 18 && value < 50) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.removeClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 50 && value < 65) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.removeClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 65 && value < 100) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.removeClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 100 && value < 129) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.removeClass("d-none");
+                    Imortal.addClass("d-none");
+                }
+                else if (value >= 130) {
+                    Bebé.addClass("d-none");
+                    Criança.addClass("d-none");
+                    Adolescente.addClass("d-none");
+                    JovemAdulto.addClass("d-none");
+                    Adulto.addClass("d-none");
+                    AdultoMeiaIdade.addClass("d-none");
+                    Idoso.addClass("d-none");
+                    Lendário.addClass("d-none");
+                    Imortal.removeClass("d-none");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- https://getbootstrap.com/docs/4.0/layout/grid/ -->
+    <div class="row">
+        <div class="col text-center">
+            <h1>Calculadora de Faixa Etária</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <form id="form">
+                <label for="numberInput">Número</label>
+                <input type="number" id="numberInput" name="numberInput">
+                <button type="submit">Submeter</button>
+            </form>
+
+            <div id="Bebé" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Bebé
+                    </p>
+                </div>
+            </div>
+            <div id="Criança" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Criança
+                    </p>
+                </div>
+            </div>
+            <div id="Adolescente" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Adolescente
+                    </p>
+                </div>
+            </div>
+            <div id="JovemAdulto" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Jovem Adulto
+                    </p>
+                </div>
+            </div>
+            <div id="Adulto" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Adulto
+                    </p>
+                </div>
+            </div>
+            <div id="AdultoMeiaIdade" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Adulto de Meia Idade
+                    </p>
+                </div>
+            </div>
+            <div id="Idoso" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Idoso
+                    </p>
+                </div>
+            </div>
+            <div id="Lendário" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Lendário
+                    </p>
+                </div>
+            </div>
+            <div id="Imortal" class="card mx-auto d-none">
+                <div class="card-body">
+                    <p class="card-text">
+                        Imortal
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- https://getbootstrap.com/docs/5.2/content/tables/ -->
+    <div class="row">
+        <div class="col text-center">
+            <h1>Indicador de Faixa Etária</h1>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-bordered">
+            <tr class="header">
+                <th>Faixa Etária</th>
+                <th>Mínimo Idade</th>
+                <th>Máximo Idade</th>
+                <th>Imagem</th>
+            </tr>
+            <tr class="bebe">
+                <td>Bebé</td>
+                <td>0</td>
+                <td>2</td>
+                <td><img src="https://www.isdin.com/assets/cms/images/Bebe_FNC-FAN2008418-1613571678282.jpeg" width="200" height="200"></td>
+            </tr>
+            <tr class="criança">
+                <td>Criança</td>
+                <td>+2</td>
+                <td>-12</td>
+                <td><img src="https://as2.ftcdn.net/v2/jpg/01/89/09/25/1000_F_189092556_bPiRio19XsjRVXt5XGVxhcwtwcMaXdby.jpg" width="200" height="200"></td>
+            </tr>
+            <tr class="adolescente">
+                <td>Adolescente</td>
+                <td>12</td>
+                <td>16</td>
+                <td><img src="https://st.depositphotos.com/2534189/3336/i/600/depositphotos_33364397-stock-photo-cute-teenage-boy-portrait-on.jpg" jsaction="load:XAeZkd;" width="200" height="200"></td>
+            </tr>
+            <tr class="jovemadulto">
+                <td>Jovem Adulto</td>
+                <td>+16</td>
+                <td>-18</td>
+                <td><img src="https://media.gettyimages.com/photos/every-designer-has-their-favourite-tool-picture-id1139930910?s=612x612" width="200" height="200"></td>
+            </tr>
+            <tr class="adulto">
+                <td>Adulto</td>
+                <td>+18</td>
+                <td>-50</td>
+                <td><img src="https://www.telavita.com.br/blog/wp-content/uploads/2019/10/13.jpg" width="200" height="200"></td>
+            </tr>
+            <tr class="adultomeiaidade">
+                <td>Adulto de Meia Idade</td>
+                <td>50</td>
+                <td>-65</td>
+                <td><img src="https://media.istockphoto.com/photos/healthy-fit-body-middle-aged-man-mature-adult-looking-at-camera-picture-id1219306698" width="200" height="200"></td>
+            </tr>
+            <tr class="idoso">
+                <td>Idoso</td>
+                <td>65</td>
+                <td>-100</td>
+                <td><img src="https://regenerati.com.br/wp-content/uploads/2022/02/papel-do-idoso-na-sociedade.jpg" width="200" height="200"></td>
+            </tr>
+            <tr class="lendario">
+                <td>Lendário</td>
+                <td>100</td>
+                <td>-130</td>
+                <td><img src="https://static.globalnoticias.pt/dn/image.jpg?brand=DN&amp;type=generate&amp;guid=618c33dd-a3c9-44b6-99e4-33512e71d417" width="200" height="200"></td>
+            </tr>
+            <tr class="imortal">
+                <td>Imortal</td>
+                <td>130</td>
+                <td>+130</td>
+                <td><img src="http://bigslam.pt/wp-content/uploads/2017/05/Velho-Rabugento-Custom.jpg" width="200" height="200"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
